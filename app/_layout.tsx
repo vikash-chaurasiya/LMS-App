@@ -1,37 +1,27 @@
 import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
+import { SplashScreen, Stack } from "expo-router";
 import { useEffect, useState } from "react";
-import "react-native-reanimated";
-import { Text, View } from "react-native";
-import Onboarding from "./(routes)/onboarding";
+import { Nunito_400Regular,Nunito_700Bold } from "@expo-google-fonts/nunito";
 
-SplashScreen.preventAutoHideAsync();
+export default function RootLayoutNav() {
 
-export default function RootLayout() {
-  const [loaded] = useFonts({
+  const [loggedIn,setLoggedIn] = useState(false);
+
+  const [loaded, error] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useEffect(() => {
-    if (loaded) {
+  useEffect(()=>{
+    if(loaded){
       SplashScreen.hideAsync();
     }
-  }, [loaded]);
+  },[loaded])
 
-  if (!loaded) {
-    return null;
-  }
 
   return (
-    <View>
-      {isLoggedIn ? (
-        <View></View>
-      ) : (
-        <View>
-          <Onboarding />
-        </View>
-      )}
-    </View>
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index"/>
+      <Stack.Screen name="(routes)/welcome-intro/index"/>
+    </Stack>
   );
 }
