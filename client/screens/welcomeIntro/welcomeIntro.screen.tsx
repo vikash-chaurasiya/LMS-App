@@ -36,10 +36,10 @@ export default function WelcomeIntroScreen() {
                   {item.description}
                </Text>
                <Text style={[commonStyles.description, { fontFamily: "Nunito_400Regular" }]}>
-                  {item.sortDescrition}
+                  {item.sortDescription}
                </Text>
                <Text style={[commonStyles.description, { fontFamily: "Nunito_400Regular" }]}>
-                  {item.sortDescrition2}
+                  {item.sortDescription2}
                </Text>
             </View>
          </View>

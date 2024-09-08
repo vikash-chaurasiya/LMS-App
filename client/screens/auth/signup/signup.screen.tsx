@@ -138,7 +138,7 @@ export default function SignUpScreen() {
                      style={[styles.input, { paddingLeft: 40, marginBottom: -12 }]}
                      keyboardType="default"
                      value={userInfo.name}
-                     placeholder="shahriar sajeeb"
+                     placeholder="Vikash Chaurasia"
                      onChangeText={(value) => setUserInfo({ ...userInfo, name: value })}
                   />
                   <AntDesign
@@ -153,7 +153,7 @@ export default function SignUpScreen() {
                      style={[styles.input, { paddingLeft: 40 }]}
                      keyboardType="email-address"
                      value={userInfo.email}
-                     placeholder="support@becodemy.com"
+                     placeholder="jaichaurasia90@gmail.com"
                      onChangeText={(value) => setUserInfo({ ...userInfo, email: value })}
                   />
                   <Fontisto
